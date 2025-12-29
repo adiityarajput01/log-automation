@@ -1,0 +1,9 @@
+ROM python:3.9-slim
+WORKDIR /app
+COPY . /app
+RUN pip install boto3
+
+# Set a custom environment variable inside the image
+ENV bucket_name=log-uploaded-bucket
+
+CMD ["python", "your_script.py"]
