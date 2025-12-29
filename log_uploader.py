@@ -2,7 +2,10 @@ import boto3
 import os
 from datetime import datetime
 
-bucket_name = "log-uploaded-bucket"
+#bucket_name = "log-uploaded-bucket" (older version)
+bucket_name = os.environ.get("S3_BUCKET_NAME", "log-uploaded-bucket")
+print(f"--- Starting v2 Logger ---")
+print(f"Target Bucket: {bucket_name}")
 folder_path = "./log" 
 today = datetime.now().strftime("%Y-%m-%d")
 
