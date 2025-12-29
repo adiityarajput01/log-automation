@@ -20,10 +20,10 @@ jobs:
           pip install -r requirements.txt || echo "No requirements.txt"
 
       - name: Run script
-        #env:
-         # aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-         # aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-         # aws-region: ${{ secrets.AWS_REGION }}  
+        env:
+         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+         aws-region: ${{ secrets.AWS_REGION }}  
         run: python log_uploader.py
 
       - name: Configure AWS Credentials
@@ -35,4 +35,4 @@ jobs:
           
       - name: Upload to S3
         run: |
-          aws s3 cp your_output.txt s3://ec2s3auto/
+          aws s3 cp fixes.txt s3://ec2s3auto/
