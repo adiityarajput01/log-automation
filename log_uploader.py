@@ -16,7 +16,7 @@ s3 = boto3.client('s3')
 def start_upload():
 	print("Starting the upload process...")
 	try:
-		with open("/app/host-logs/outputs.log","a") as f:
+		with open("./host-logs/outputs.log","a") as f:
 			f.write(f"\n--- Run started at {today} ---\n")
 		
 			for filename in os.listdir(folder_path):
