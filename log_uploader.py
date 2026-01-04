@@ -38,7 +38,7 @@ def start_upload():
 			f.flush()
 			os.fsync(f.fileno())
 	except Exception as e:
-		print("Logging error: {e}")
+		print(f"Logging error: {e}")
 						
 
 if __name__ == "__main__":
