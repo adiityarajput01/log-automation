@@ -3,4 +3,4 @@ WORKDIR /app
 COPY . /app
 RUN pip install boto3
 ENV bucket_name=log-uploaded-bucket
-CMD ["python", "your_script.py"]
+CMD ["python", "log_uploader.py"]
